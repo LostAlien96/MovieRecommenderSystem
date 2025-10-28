@@ -4,6 +4,7 @@ import pandas as pd
 import pickle
 import requests
 import time
+import os
 
 # --------------------------
 # TMDB API Fetch Function
@@ -167,6 +168,8 @@ def recommend(movie):
 # --------------------------
 # Load Data
 # --------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 movies_dict = pickle.load(open(os.path.join(BASE_DIR, 'movie_dict.pkl'), 'rb'))
 similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
