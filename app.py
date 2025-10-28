@@ -167,9 +167,10 @@ def recommend(movie):
 # --------------------------
 # Load Data
 # --------------------------
-movies_dict = pickle.load(open('movie_dict.pkl', 'rb'))
+
+movies_dict = pickle.load(open(os.path.join(BASE_DIR, 'movie_dict.pkl'), 'rb'))
+similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
 movies = pd.DataFrame(movies_dict)
-similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 # --------------------------
 # Streamlit UI
